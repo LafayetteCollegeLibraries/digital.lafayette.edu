@@ -38,7 +38,6 @@ const Field = props => {
   )
 }
 
-
 const Divider = () => (
   <div className={`${CLASSNAME}-divider`} />
 )

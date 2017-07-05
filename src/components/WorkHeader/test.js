@@ -49,12 +49,6 @@ describe('<WorkHeader />', function () {
       expect($el.find('TextButton')).to.have.lengthOf(0)
     })
 
-    it('is not rendered when `onReturnToSearchResults` is not a function', function () {
-      const onReturnToSearchResults = 'sure go ahead'
-      const $el = shallowEl({onReturnToSearchResults})
-      expect($el.find('TextButton')).to.have.lengthOf(0)
-    })
-
     it('is rendered if `onReturnToSearchResults` is a function', function () {
       const onReturnToSearchResults = () => {}
       const $el = shallowEl({onReturnToSearchResults})

@@ -13,27 +13,27 @@ const Bar = ({x, y}) => {
 }
 
 export default function HamburgerButton (props) {
-  let className = 'HamburgerButton'
+  let cn = 'HamburgerButton'
 
-  if (props.active) {
-    className += ' active'
+  const { active, className, ...otherProps } = props
+
+  if (active) {
+    cn += ' active'
   }
 
-  if (props.className) {
-    className += ` ${props.className}`
+  if (className) {
+    cn += ` ${className}`
   }
 
   return (
     <button
-      className={className}
-      onClick={props.onClick}
       type="button"
+
+      {...otherProps}
+
+      className={cn}
     >
-      <svg
-        version="1.1"
-        viewBox="0 0 300 300"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+      <svg viewBox="0 0 300 300">
         <Bar x="25" y="80" />
         <Bar x="25" y="170" />
         <Bar x="25" y="260" />
